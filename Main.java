@@ -1,18 +1,18 @@
+import java.util.Scanner; 
 public class Main {
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
 
         Posicao lugarDoCavalo = new Posicao(1, 2);
         Cavalo meuCavalo = new Cavalo("Branco", lugarDoCavalo);
 
-        Posicao lugarDoBispo = new Posicao(5, 5);
-        Bispo meuBispo = new Bispo("Preto", lugarDoBispo);
+        System.out.println("Próxima posição do Cavalo Branco");
+        System.out.print("Linha: ");
+        int linhaDigitada = teclado.nextInt();
+        System.out.print("Coluna: ");
+        int colunaDigitada = teclado.nextInt();
 
-        Posicao novoLugarCavalo = new Posicao(3, 3);
-        meuCavalo.mover(novoLugarCavalo);
-
-        System.out.println();
-
-        Posicao novoLugarBispo = new Posicao(7, 7);
-        meuBispo.mover(novoLugarBispo);
+        Posicao destinoDoJogador = new Posicao(linhaDigitada, colunaDigitada);
+        meuCavalo.mover(destinoDoJogador);
     }
 }
